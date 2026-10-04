@@ -12,11 +12,11 @@ No report templates: every page is analysed dynamically (text vs. scanned, table
 ## Screenshots
 | Review & edit | Compile a PDF |
 |---|---|
-| ![Review](docs/screenshots/review.png) | ![Compile](docs/screenshots/compile.png) |
+| ![Review](uscan/docs/screenshots/review.png) | ![Compile](uscan/docs/screenshots/compile.png) |
 
 | Mobile | Dark mode |
 |---|---|
-| <img src="docs/screenshots/mobile.png" width="240" alt="Mobile"> | ![Dark mode](docs/screenshots/dark.png) |
+| <img src="uscan/docs/screenshots/mobile.png" width="240" alt="Mobile"> | ![Dark mode](uscan/docs/screenshots/dark.png) |
 
 The UI is responsive (tables become cards on phones) and follows your system light/dark setting; a toggle in the header lets you override it. Fonts are self-hosted ([Inter](https://rsms.me/inter/), SIL OFL — see `static/fonts/OFL-Inter.txt`), so the page loads nothing from third parties and works under the strict CSP.
 
