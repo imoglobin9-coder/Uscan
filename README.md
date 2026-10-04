@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)
 
-<p align="center"><img src="docs/screenshots/dashboard.png" alt="uscan dashboard" width="780"></p>
+<p align="center"><img src="uscan/docs/screenshots/dashboard.png" alt="uscan dashboard" width="780"></p>
 
 Upload any report (PDF, JPG, PNG, TIFF) → OCR / text extraction → review & edit → compile → download one PDF.
 No report templates: every page is analysed dynamically (text vs. scanned, tables of any shape, any page size).
