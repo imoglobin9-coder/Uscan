@@ -21,11 +21,16 @@ No report templates: every page is analysed dynamically (text vs. scanned, table
 The UI is responsive (tables become cards on phones) and follows your system light/dark setting; a toggle in the header lets you override it. Fonts are self-hosted ([Inter](https://rsms.me/inter/), SIL OFL — see `static/fonts/OFL-Inter.txt`), so the page loads nothing from third parties and works under the strict CSP.
 
 ## Requirements
-* Python 3.11+
-* **Tesseract OCR** installed (the Python packages don't include it)
-  * Windows: install from https://github.com/UB-Mannheim/tesseract/wiki, then set `TESSERACT_CMD` in `.env` if it isn't on PATH
-  * macOS: `brew install tesseract` · Ubuntu/Debian: `sudo apt install tesseract-ocr`
+* **Python 3.11+** — [download for Windows](https://www.python.org/downloads/windows/) (tick *Add python.exe to PATH*) · or from a terminal:
+  * Windows: `winget install -e --id Python.Python.3.12`
+  * macOS: `brew install python`
+  * Ubuntu/Debian: `sudo apt install python3 python3-venv python3-pip`
+* **Tesseract OCR** (the Python packages don't include it)
+  * Windows: `winget install -e --id UB-Mannheim.TesseractOCR` · or [download the installer](https://github.com/UB-Mannheim/tesseract/wiki); then set `TESSERACT_CMD` in `.env` if it isn't on PATH, e.g. `TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe`
+  * macOS: `brew install tesseract`
+  * Ubuntu/Debian: `sudo apt install tesseract-ocr`
 
+Check your versions with `python --version` and `tesseract --version` (open a new terminal after installing).
 ## Run
 ```bash
 python -m venv .venv
