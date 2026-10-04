@@ -35,9 +35,6 @@ python run.py                    # or: uvicorn app.main:app --reload
 ```
 Open http://127.0.0.1:8000. Launchers: `run_windows.bat`, `run_mac_linux.sh`. Copy `.env.example` to `.env` to configure.
 
-## Publishing for the public
-Set `PUBLIC_MODE=true` and every visitor gets an **anonymous private workspace** (cookie-based, no accounts) with quotas, rate limits and automatic deletion after 24 h of inactivity, plus a `/privacy` page and a *Delete my data* button. A `Dockerfile`, `docker-compose.yml` and `Caddyfile` are included. **Read [DEPLOY.md](DEPLOY.md) before going live.**
-
 ## Sign-in and security
 By default uscan listens **only on this computer** (`127.0.0.1`) and needs no password. To add one, set `APP_PASSWORD` in `.env`; the UI then shows a sign-in page.
 
@@ -87,9 +84,6 @@ Handwriting depends on what Tesseract can read; rowspans in tables and perspecti
 
 ## Contributing
 Issues and pull requests are welcome. Run `pytest` before opening a PR; CI runs the same tests (with Tesseract installed) on Python 3.11 and 3.12. Never commit `.env` or anything under `data/` — both are git-ignored.
-
-## Before you publish
-Replace `YOUR-USERNAME` in the CI badge at the top of this file with your GitHub username or organisation.
 
 ## License
 [MIT](LICENSE)
