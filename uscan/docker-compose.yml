@@ -1,0 +1,37 @@
+# For a VPS you control. Put SITE_ADDRESS=your.domain.example in .env next to this file, then: docker compose up -d --build
+services:
+  uscan:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PUBLIC_MODE: "true"
+      COOKIE_SECURE: "true"
+      TRUSTED_PROXIES: "*"        # safe here: the app has no published port, only Caddy can reach it
+    volumes:
+      - uscan-data:/data
+    expose: ["8000"]
+    # Untrusted files are parsed by this container, so it gets a ceiling on what it can use.
+    mem_limit: 2g
+    cpus: 2
+    pids_limit: 256
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    # Extra hardening once it works for you: read_only: true  +  tmpfs: ["/tmp:size=256m"]
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on: [uscan]
+    ports: ["80:80", "443:443"]
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?Set SITE_ADDRESS in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  uscan-data:
+  caddy-data:
+  caddy-config:
