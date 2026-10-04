@@ -30,6 +30,7 @@ The UI is responsive (tables become cards on phones) and follows your system lig
 ```bash
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
+cd Uscan/uscan                   # Skip this when you are already on uscan folder
 pip install -r requirements.txt
 python run.py                    # or: uvicorn app.main:app --reload
 ```
